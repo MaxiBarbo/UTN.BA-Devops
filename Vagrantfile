@@ -28,19 +28,19 @@ Vagrant.configure("2") do |config|
   # Esto se realiza para poder darle visibilidad a los puertos de la maquina virtual
   # y además para que no se solapen los puertos con los de nuestra equipo en el caso de que
   # ese número de puerto este en uso.
-  config.vm.network "forwarded_port", guest: 80, host: 8081
+  config.vm.network "forwarded_port", guest: 80, host: 8090
 
   #Permite descargas con certificados vencidos o por http
   config.vm.box_download_insecure = true
 
 
   # configuración del nombre de maquina
-  config.vm.hostname = "utn-devops.localhost"
+  config.vm.hostname = "android.localhost"
   config.vm.boot_timeout = 3600
 
   #Configuro la cantidad de memoria ram de la VM para el proveedor VirtualBox
   config.vm.provider "virtualbox" do |v|
-	  v.name = "utn-devops-vagrant-ubuntu-tp1"
+	  v.name = "android-emulator"
     v.memory = "1024"
   end
 
